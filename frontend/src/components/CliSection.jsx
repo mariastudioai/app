@@ -65,8 +65,8 @@ const CliSection = () => {
             </button>
           </div>
           <div className="space-y-2 text-[14px]">
-            {commands.map((c, i) => (
-              <div key={i} className="font-mono">
+            {commands.map((c) => (
+              <div key={c} className="font-mono">
                 <span className="text-[#7C6CFF]">$</span>
                 <span className="text-white/90"> {c.slice(2)}</span>
               </div>

@@ -36,7 +36,7 @@ export const AnalyticsVisual = () => {
       <div className="flex items-end justify-around h-[100px] gap-3">
         {bars.map((h, i) => (
           <div
-            key={i}
+            key={`bar-${i}-${h}`}
             className="flex-1 rounded-t-md bg-gradient-to-t from-[#7C6CFF] to-[#A89AFF] bar-grow"
             style={{ height: `${h}%`, animationDelay: `${i * 0.15}s` }}
           />
