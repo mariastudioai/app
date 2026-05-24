@@ -123,15 +123,18 @@ backend:
 frontend:
   - task: "Auth dialog + context wiring on CTAs"
     implemented: true
-    working: "NA"
+    working: true
     file: "frontend/src/components/AuthDialog.jsx"
     stuck_count: 0
-    priority: "medium"
+    priority: "high"
     needs_retesting: false
     status_history:
         - working: "NA"
           agent: "main"
           comment: "AuthContext hydrates from localStorage token via /auth/me. AuthDialog has Sign up / Sign in tabs and a Welcome view after signup. Navbar, Hero, Pricing, CTA all open the dialog. Navbar shows user pill+logout once authenticated. Not flagged for automated FE test yet — user wants to manually test FE first."
+        - working: true
+          agent: "testing"
+          comment: "✅ COMPREHENSIVE E2E AUTH TESTING COMPLETE - ALL FLOWS WORKING. Tested at https://fast-deploy-33.preview.emergentagent.com. (1) Signup dialog opens from navbar 'Get started free' button with correct elements: MARI.A LAUNCH eyebrow, 'Create your account' heading with italic 'account', Sign up/Sign in tabs, 3 input fields (name, email, password). (2) Validation working: browser blocks empty fields, invalid email format blocked, password <6 chars shows 'Password must be at least 6 characters' error. (3) Successful signup with unique email (marie+timestamp@mariatest.com) displays Welcome view with gold checkmark, 'YOU'RE IN' eyebrow, 'Welcome, Marie.' heading (uses first name), descriptive text, and 'Start deploying' button. (4) After signup, navbar shows brown user pill with gold 'M' initial avatar and 'MARIE' uppercase first name. (5) User menu dropdown opens on pill click, displays full name 'Marie Lune', email, and 'Sign out' button. (6) Logout reverts navbar to 'Sign in' / 'Get started free' buttons. (7) Login flow: clicking 'Get started free' → 'Sign in' tab changes heading to 'Welcome back'. Wrong password shows red error 'Invalid email or password'. Correct password closes dialog, shows toast 'Welcome back, Marie', and restores user pill. (8) Pricing CTA: clicking 'Start with Pro' on Pro card opens signup dialog with badge 'You're starting on the PRO plan' (PRO in gold uppercase). (9) Hero interactions: ZIP dropzone click shows toast 'mysite.zip selected', GitHub tab switch displays input + Connect button. (10) Session persistence: after login + page reload, user pill remains visible (token persists in localStorage). (11) Responsive: tested at 390×844 mobile viewport - hamburger menu works, dialog fits and is usable. Console clean (only expected 401 from wrong password test). Backend logs confirm all API calls working correctly (201 signup, 409 duplicate, 422 validation, 200 login, 401 wrong password). No critical issues found."
 
 metadata:
   created_by: "main_agent"
@@ -139,8 +142,7 @@ metadata:
   test_sequence: 1
 
 test_plan:
-  current_focus:
-    - "Auth endpoints — signup / login / me with JWT"
+  current_focus: []
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
@@ -150,3 +152,5 @@ agent_communication:
     message: "Backend now has JWT auth (signup/login/me). Please test the three endpoints end-to-end: 1) signup creates user and returns valid JWT, 2) duplicate signup returns 409, 3) signup with invalid email / short password (<6) fails validation (422), 4) login with correct creds returns token, 5) login with wrong password returns 401, 6) GET /auth/me with valid Bearer returns user, with missing/invalid/expired token returns 401, 7) email is normalized lowercase. Use REACT_APP_BACKEND_URL (https://fast-deploy-33.preview.emergentagent.com) + /api prefix. Mongo URL and JWT_SECRET are already configured in backend/.env."
   - agent: "testing"
     message: "✅ Backend authentication testing COMPLETE - ALL TESTS PASSED (19/19, 100% success). All three auth endpoints (signup, login, me) are working correctly with proper validation, error handling, JWT token generation/verification, and case-insensitive email matching. Backend is production-ready. Main agent can now summarize and finish the task."
+  - agent: "testing"
+    message: "✅ FRONTEND E2E AUTH TESTING COMPLETE - ALL FLOWS WORKING PERFECTLY. Comprehensive testing completed covering: (1) Signup dialog UI with all required elements, (2) Form validation (empty fields, invalid email, short password), (3) Successful signup with Welcome view, (4) Navbar user pill display, (5) User menu dropdown with logout, (6) Login flow with wrong/correct password, (7) Pricing CTA with plan badge, (8) Hero interactive elements (ZIP upload, GitHub tab), (9) Session persistence after reload, (10) Mobile responsive design. All features working as specified in the review request. No critical issues found. Console clean. Backend API integration working correctly. The MARI.A Launch landing page with JWT auth is production-ready."
