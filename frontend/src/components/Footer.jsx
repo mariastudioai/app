@@ -9,7 +9,7 @@ const RotatingBadge = () => (
       </defs>
       <circle cx="50" cy="50" r="44" fill="#5B4EE6" />
       <text fill="white" fontSize="9" fontWeight="700" letterSpacing="1">
-        <textPath href="#circle">HOSTED ON EZLAUNCH · HOSTED ON EZLAUNCH · </textPath>
+        <textPath href="#circle">HOSTED ON MARI.A LAUNCH · HOSTED ON MARI.A LAUNCH · </textPath>
       </text>
     </svg>
     <svg width="24" height="24" viewBox="0 0 32 32" fill="none" className="relative">
@@ -62,7 +62,7 @@ const Footer = () => {
             <a href="#" className="hover:text-white">Docs</a>
           </div>
           <p className="text-[13px] text-white/50">
-            © 2026 EZLaunch. All rights reserved.
+            © 2026 MARI.A Launch. All rights reserved.
           </p>
         </div>
       </div>

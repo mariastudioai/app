@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Logo = ({ className = '', size = 28, variant = 'default' }) => {
-  // EZLaunch lightning-style logo (two stacked tilted bars in indigo)
+  // MARI.A Launch lightning-style logo (two stacked tilted bars in indigo)
   const grad = variant === 'white' ? '#ffffff' : 'url(#ezGrad)';
   return (
     <div className={`flex items-center gap-2 ${className}`}>
@@ -15,10 +15,10 @@ const Logo = ({ className = '', size = 28, variant = 'default' }) => {
         <path d="M20 3 L4 17 L14 17 L8 29 L28 13 L18 13 L24 3 Z" fill={grad} />
       </svg>
       <span
-        className="text-[20px] font-extrabold tracking-tight"
+        className="text-[20px] font-extrabold tracking-tight whitespace-nowrap"
         style={{ color: variant === 'white' ? '#fff' : '#1B1B3A' }}
       >
-        ezlaunch
+        MARI.A Launch
       </span>
     </div>
   );

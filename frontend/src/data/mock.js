@@ -32,7 +32,7 @@ export const features = [
   },
   {
     title: 'Forms that work',
-    desc: 'Add data-ezlaunch to any form. Submissions show up in your dashboard instantly.',
+    desc: 'Add data-maria to any form. Submissions show up in your dashboard instantly.',
     visual: 'forms',
     icon: MailCheck,
   },
@@ -76,13 +76,13 @@ export const steps = [
   },
   {
     number: '02',
-    title: 'Deploy to EZLaunch',
+    title: 'Deploy to MARI.A Launch',
     desc: 'Drop your ZIP file or connect a GitHub repo. We extract, optimize, and push your files to the CDN.',
   },
   {
     number: '03',
     title: 'Share with the world',
-    desc: 'Your site is live at yourname.ezlaunch.app with SSL, analytics, and forms ready out of the box.',
+    desc: 'Your site is live at yourname.marialaunch.app with SSL, analytics, and forms ready out of the box.',
   },
 ];
 

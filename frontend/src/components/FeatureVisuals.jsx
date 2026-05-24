@@ -20,7 +20,7 @@ export const SSLVisual = () => (
   <div className="relative h-[180px] bg-gradient-to-br from-[#F7F6FF] to-[#EFEDF8] rounded-2xl p-5 flex items-start justify-center">
     <div className="mt-6 flex items-center gap-3 px-4 py-3 rounded-xl bg-white border border-black/5 shadow-sm w-full max-w-[280px]">
       <div className="w-2 h-2 rounded-full bg-emerald-500 pulse-dot" />
-      <span className="font-mono text-[13px] text-[#1B1B3A]">https://mysite.ezlaunch.app</span>
+      <span className="font-mono text-[13px] text-[#1B1B3A]">https://mysite.marialaunch.app</span>
     </div>
   </div>
 );
@@ -49,7 +49,7 @@ export const AnalyticsVisual = () => {
 export const FormsVisual = () => (
   <div className="relative h-[180px] bg-gradient-to-br from-[#F7F6FF] to-[#EFEDF8] rounded-2xl p-5">
     <div className="flex justify-between items-center mb-3">
-      <span className="font-mono text-[12px] text-[#1B1B3A]/70">&lt;form data-ezlaunch&gt;…&lt;/form&gt;</span>
+      <span className="font-mono text-[12px] text-[#1B1B3A]/70">&lt;form data-maria&gt;…&lt;/form&gt;</span>
       <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/60">Submissions · Just now</span>
     </div>
     <div className="flex items-center gap-3 px-3 py-3 rounded-xl bg-white border border-black/5">
@@ -85,9 +85,9 @@ export const CLIVisual = () => (
       <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/80" />
     </div>
     <div className="text-[12px] space-y-1.5">
-      <div><span className="text-[#7C6CFF]">$</span> ezlaunch deploy</div>
+      <div><span className="text-[#7C6CFF]">$</span> maria deploy</div>
       <div className="text-emerald-400">✓ Uploading files...</div>
-      <div className="text-emerald-400">✓ Live at <span className="underline">mysite.ezlaunch.app</span></div>
+      <div className="text-emerald-400">✓ Live at <span className="underline">mysite.marialaunch.app</span></div>
     </div>
   </div>
 );
@@ -144,7 +144,7 @@ export const ImagesVisual = () => (
       <div className="w-5 h-5 rounded bg-gradient-to-br from-[#7C6CFF] to-[#B6AEFF]" />
       <div className="flex-1 min-w-0">
         <div className="text-[11px] font-semibold text-[#1B1B3A] truncate">hero-banner.png</div>
-        <div className="text-[10px] font-mono text-[#1B1B3A]/50 truncate">assets.ezlaunch.app/hero-banner.png</div>
+        <div className="text-[10px] font-mono text-[#1B1B3A]/50 truncate">assets.marialaunch.app/hero-banner.png</div>
       </div>
       <button className="text-[10px] font-semibold text-[#7C6CFF] flex items-center gap-1 hover:text-[#5B4EE6]">
         <Copy size={11} /> Copy

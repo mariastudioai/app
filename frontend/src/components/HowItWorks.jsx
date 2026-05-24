@@ -69,7 +69,7 @@ const Step03Visual = () => (
         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
       </div>
       <div className="flex-1 flex items-center gap-1 text-[11px] font-mono text-[#1B1B3A]">
-        <span className="text-emerald-500">●</span> mysite.ezlaunch.app
+        <span className="text-emerald-500">●</span> mysite.marialaunch.app
       </div>
     </div>
     <div className="flex gap-2 mb-2">

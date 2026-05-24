@@ -7,9 +7,9 @@ const CliSection = () => {
   const [copied, setCopied] = useState(false);
 
   const commands = [
-    '$ npm install -g ezlaunch',
-    '$ ezlaunch login',
-    '$ ezlaunch deploy',
+    '$ npm install -g maria-launch',
+    '$ maria login',
+    '$ maria deploy',
   ];
 
   const handleCopy = () => {
@@ -28,7 +28,7 @@ const CliSection = () => {
             Prefer the terminal?
           </h2>
           <p className="mt-5 text-[17px] text-white/70 max-w-md">
-            Install the EZLaunch CLI and deploy from anywhere in 3 commands.
+            Install the MARI.A Launch CLI and deploy from anywhere in 3 commands.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             {['Node.js', 'macOS', 'Linux', 'Windows'].map((o) => (
@@ -72,7 +72,7 @@ const CliSection = () => {
               </div>
             ))}
             <div className="font-mono text-emerald-400">✓ Uploading files...</div>
-            <div className="font-mono text-emerald-400">✓ Live at <span className="underline">mysite.ezlaunch.app</span></div>
+            <div className="font-mono text-emerald-400">✓ Live at <span className="underline">mysite.marialaunch.app</span></div>
             <div className="font-mono text-white/40">|</div>
           </div>
         </div>

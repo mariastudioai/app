@@ -148,7 +148,7 @@ const HeroDeployCard = () => {
         </div>
         <div className="flex items-center gap-2">
           <span className="text-[11px] font-mono px-2 py-1 bg-white rounded-md border border-emerald-200/60 text-emerald-700">SSL</span>
-          <span className="text-[13px] font-mono text-[#1B1B3A]/80">mysite.ezlaunch.app</span>
+          <span className="text-[13px] font-mono text-[#1B1B3A]/80">mysite.marialaunch.app</span>
         </div>
       </div>
     </div>
@@ -185,7 +185,7 @@ const Hero = () => {
             </a>
           </div>
           <p className="mt-6 text-[13px] text-[#1B1B3A]/60">
-            Join developers already hosting on <a href="#" className="text-[#7C6CFF] font-semibold">EZLaunch</a> · Free to start
+            Join developers already hosting on <a href="#" className="text-[#7C6CFF] font-semibold">MARI.A Launch</a> · Free to start
           </p>
         </div>
         <div className="reveal flex justify-center lg:justify-end" style={{ animationDelay: '0.15s' }}>
