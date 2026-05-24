@@ -10,29 +10,29 @@ const Pricing = () => {
     <section id="pricing" className="py-24 px-4 section-bg">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-[40px] sm:text-[52px] font-extrabold leading-[1.05] tracking-tight text-[#1B1B3A] max-w-2xl mx-auto">
-            Simple pricing. No surprises.
+          <h2 className="h-display text-[44px] sm:text-[60px] text-[#3E2F2B] max-w-2xl mx-auto">
+            Simple pricing. <em>No surprises.</em>
           </h2>
-          <p className="mt-4 text-[17px] text-[#1B1B3A]/65">
+          <p className="mt-4 text-[17px] text-[#1A1A1A]/65 font-light">
             Start free, upgrade when you're ready. Cancel anytime.
           </p>
-          <div className="inline-flex items-center mt-8 p-1 rounded-full bg-white border border-black/5 shadow-sm">
+          <div className="inline-flex items-center mt-8 p-1 rounded-full bg-white border border-[#3E2F2B]/10 shadow-sm">
             <button
               onClick={() => setBilling('monthly')}
-              className={`btn-pill px-5 py-2 text-[13px] ${
-                billing === 'monthly' ? 'bg-[#7C6CFF] text-white' : 'text-[#1B1B3A]/70 hover:text-[#1B1B3A]'
+              className={`btn-pill px-5 py-2 text-[13px] tracking-[0.04em] uppercase ${
+                billing === 'monthly' ? 'bg-[#3E2F2B] text-white' : 'text-[#1A1A1A]/70 hover:text-[#3E2F2B]'
               }`}
             >
               Monthly
             </button>
             <button
               onClick={() => setBilling('yearly')}
-              className={`btn-pill px-5 py-2 text-[13px] ${
-                billing === 'yearly' ? 'bg-[#7C6CFF] text-white' : 'text-[#1B1B3A]/70 hover:text-[#1B1B3A]'
+              className={`btn-pill px-5 py-2 text-[13px] tracking-[0.04em] uppercase ${
+                billing === 'yearly' ? 'bg-[#3E2F2B] text-white' : 'text-[#1A1A1A]/70 hover:text-[#3E2F2B]'
               }`}
             >
               Yearly
-              <span className="ml-1 text-[11px] font-semibold text-emerald-600">2 months free</span>
+              <span className="ml-1 text-[11px] font-semibold text-[#C6A77D] normal-case tracking-normal">2 months free</span>
             </button>
           </div>
         </div>
@@ -43,35 +43,35 @@ const Pricing = () => {
               className={`price-card relative p-6 ${p.popular ? 'popular' : ''}`}
             >
               {p.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-[#7C6CFF] text-white text-[11px] font-bold tracking-wide">
-                  MOST POPULAR
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-[#C6A77D] text-[#3E2F2B] text-[10px] font-bold tracking-[0.18em] uppercase">
+                  Most popular
                 </div>
               )}
-              <div className="text-[12px] tracking-[0.16em] uppercase font-bold text-[#1B1B3A]/60 mb-3">
+              <div className="text-[11px] tracking-[0.22em] uppercase font-semibold text-[#C6A77D] mb-3">
                 {p.name}
               </div>
               <div className="flex items-baseline gap-1 mb-6">
-                <span className="text-[40px] font-extrabold text-[#1B1B3A] tracking-tight">{p.price}</span>
-                {p.sub && <span className="text-[14px] text-[#1B1B3A]/60">{p.sub}</span>}
+                <span className="h-display text-[52px] text-[#3E2F2B]">{p.price}</span>
+                {p.sub && <span className="text-[14px] text-[#1A1A1A]/60 font-light">{p.sub}</span>}
               </div>
-              <div className="border-t border-black/5 pt-4 space-y-3 mb-6">
+              <div className="border-t border-[#C6A77D]/30 pt-4 space-y-3 mb-6">
                 {p.features.map(([label, value]) => (
                   <div key={label} className="flex items-center justify-between text-[13.5px]">
-                    <span className="text-[#1B1B3A]/65">{label}</span>
+                    <span className="text-[#1A1A1A]/65 font-light">{label}</span>
                     {value === true ? (
-                      <Check size={16} className="text-emerald-500" />
+                      <Check size={16} className="text-[#C6A77D]" />
                     ) : (
-                      <span className="font-semibold text-[#1B1B3A]">{value}</span>
+                      <span className="font-semibold text-[#3E2F2B]">{value}</span>
                     )}
                   </div>
                 ))}
               </div>
               <a
                 href="#signup"
-                className={`btn-pill w-full justify-center py-3 text-[14px] ${
+                className={`btn-pill w-full justify-center py-3 text-[13px] tracking-[0.08em] uppercase ${
                   p.popular
-                    ? 'bg-[#7C6CFF] text-white hover:bg-[#6B5BE8] shadow-[0_10px_25px_-10px_rgba(124,108,255,0.7)]'
-                    : 'bg-white text-[#1B1B3A] border border-black/10 hover:border-[#7C6CFF]/40'
+                    ? 'bg-[#3E2F2B] text-white hover:bg-[#2A1F1B] shadow-[0_10px_25px_-10px_rgba(62,47,43,0.45)]'
+                    : 'bg-transparent text-[#3E2F2B] border border-[#3E2F2B]/25 hover:border-[#C6A77D] hover:text-[#C6A77D]'
                 }`}
               >
                 {p.cta}

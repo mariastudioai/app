@@ -17,8 +17,8 @@ const iconFor = (name) => {
 };
 
 const Pill = ({ name }) => (
-  <div className="flex items-center gap-2 px-5 py-2.5 mx-2 rounded-full bg-white border border-black/5 shadow-[0_4px_18px_-8px_rgba(27,27,58,0.15)] text-[#1B1B3A] font-semibold text-[14px] whitespace-nowrap">
-    <span className="text-[#7C6CFF]">{iconFor(name)}</span>
+  <div className="flex items-center gap-2 px-5 py-2.5 mx-2 rounded-full bg-white border border-[#C6A77D]/25 shadow-[0_4px_18px_-10px_rgba(62,47,43,0.18)] text-[#3E2F2B] font-medium text-[14px] whitespace-nowrap">
+    <span className="text-[#C6A77D]">{iconFor(name)}</span>
     <span>{name === 'bolt' ? 'bolt' : name === 'replit' ? 'replit' : name}</span>
   </div>
 );
@@ -28,7 +28,7 @@ const LogoMarquee = () => {
   return (
     <section className="py-14 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4">
-        <p className="text-center text-[12px] tracking-[0.18em] font-semibold text-[#1B1B3A]/50 uppercase mb-8">
+        <p className="text-center text-[11px] tracking-[0.32em] font-semibold text-[#C6A77D] uppercase mb-8">
           Works with every AI coding tool
         </p>
       </div>
@@ -38,8 +38,8 @@ const LogoMarquee = () => {
             <Pill key={`${tool.name}-${i}`} name={tool.logo} />
           ))}
         </div>
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#F5F4FB] to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#F5F4FB] to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#F6F3EF] to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#F6F3EF] to-transparent" />
       </div>
     </section>
   );

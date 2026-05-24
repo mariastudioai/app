@@ -7,13 +7,13 @@ const Features = () => {
     <section id="features" className="py-24 px-4 section-bg">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
-          <div className="inline-flex px-4 py-1.5 rounded-full bg-white/70 border border-[#7C6CFF]/30 text-[13px] font-semibold text-[#5B4EE6] mb-5">
+          <div className="inline-flex px-4 py-1.5 rounded-full bg-white/70 border border-[#C6A77D]/50 text-[12px] font-semibold tracking-[0.18em] uppercase text-[#C6A77D] mb-5">
             Features
           </div>
-          <h2 className="text-[40px] sm:text-[52px] font-extrabold leading-[1.05] tracking-tight text-[#1B1B3A] max-w-3xl mx-auto">
-            Everything your site needs. Nothing it doesn't.
+          <h2 className="h-display text-[44px] sm:text-[60px] text-[#3E2F2B] max-w-3xl mx-auto">
+            Everything your site needs. <em>Nothing</em> it doesn't.
           </h2>
-          <p className="mt-4 text-[17px] text-[#1B1B3A]/65">
+          <p className="mt-4 text-[17px] text-[#1A1A1A]/65 font-light">
             Every plan includes the tools that matter, no add-ons, no surprises.
           </p>
         </div>
@@ -24,8 +24,8 @@ const Features = () => {
               <div key={f.title} className="feature-card p-5 reveal" style={{ animationDelay: `${i * 0.05}s` }}>
                 {Visual && <Visual />}
                 <div className="mt-5 px-1">
-                  <h3 className="text-[20px] font-bold text-[#1B1B3A] mb-2">{f.title}</h3>
-                  <p className="text-[14.5px] leading-relaxed text-[#1B1B3A]/65">{f.desc}</p>
+                  <h3 className="text-[20px] font-semibold text-[#3E2F2B] mb-2 tracking-tight">{f.title}</h3>
+                  <p className="text-[14.5px] leading-relaxed text-[#1A1A1A]/65 font-light">{f.desc}</p>
                 </div>
               </div>
             );
