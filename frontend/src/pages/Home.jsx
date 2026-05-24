@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import LogoMarquee from '../components/LogoMarquee';
 import Features from '../components/Features';
+import CraftedSection from '../components/CraftedSection';
 import HowItWorks from '../components/HowItWorks';
 import CliSection from '../components/CliSection';
 import Pricing from '../components/Pricing';
@@ -16,6 +17,7 @@ const Home = () => {
       <Hero />
       <LogoMarquee />
       <Features />
+      <CraftedSection />
       <HowItWorks />
       <CliSection />
       <Pricing />

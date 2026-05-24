@@ -101,3 +101,52 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "MARI.A Launch — luxury static-hosting landing page (clone of ezlaunch.app). Added full account signup with JWT auth and editorial brand imagery."
+
+backend:
+  - task: "Auth endpoints — signup / login / me with JWT"
+    implemented: true
+    working: true
+    file: "backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Implemented POST /api/auth/signup (201, returns token+user, 409 if email exists), POST /api/auth/login (200/401), GET /api/auth/me (Bearer token, 401 if invalid). Passwords hashed with bcrypt via passlib. JWT HS256, 7-day TTL, secret from JWT_SECRET env. Stores users in MongoDB collection `users` with uuid id, lowercased unique email, name, password_hash, created_at. Email validation via pydantic EmailStr. Min password length 6."
+        - working: true
+          agent: "testing"
+          comment: "✅ ALL 19 TESTS PASSED (100% success rate). Verified: (1) POST /api/auth/signup returns 201 with token+user, creates user in DB with lowercased email; (2) Duplicate email returns 409 (case-insensitive check working); (3) Invalid email format returns 422; (4) Password <6 chars returns 422; (5) POST /api/auth/login returns 200 with token+user for valid credentials; (6) Login with wrong password returns 401; (7) Login with non-existent email returns 401; (8) Case-insensitive email matching works (uppercase email accepted); (9) GET /api/auth/me with valid Bearer token returns 200 with user object (id, name, email, created_at); (10) GET /api/auth/me without token returns 401; (11) GET /api/auth/me with invalid token returns 401; (12) JWT token structure validated - contains sub, email, exp, iat claims; (13) JWT uses HS256 algorithm. All endpoints working correctly at https://fast-deploy-33.preview.emergentagent.com/api."
+
+frontend:
+  - task: "Auth dialog + context wiring on CTAs"
+    implemented: true
+    working: "NA"
+    file: "frontend/src/components/AuthDialog.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "AuthContext hydrates from localStorage token via /auth/me. AuthDialog has Sign up / Sign in tabs and a Welcome view after signup. Navbar, Hero, Pricing, CTA all open the dialog. Navbar shows user pill+logout once authenticated. Not flagged for automated FE test yet — user wants to manually test FE first."
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 1
+
+test_plan:
+  current_focus:
+    - "Auth endpoints — signup / login / me with JWT"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "main"
+    message: "Backend now has JWT auth (signup/login/me). Please test the three endpoints end-to-end: 1) signup creates user and returns valid JWT, 2) duplicate signup returns 409, 3) signup with invalid email / short password (<6) fails validation (422), 4) login with correct creds returns token, 5) login with wrong password returns 401, 6) GET /auth/me with valid Bearer returns user, with missing/invalid/expired token returns 401, 7) email is normalized lowercase. Use REACT_APP_BACKEND_URL (https://fast-deploy-33.preview.emergentagent.com) + /api prefix. Mongo URL and JWT_SECRET are already configured in backend/.env."
+  - agent: "testing"
+    message: "✅ Backend authentication testing COMPLETE - ALL TESTS PASSED (19/19, 100% success). All three auth endpoints (signup, login, me) are working correctly with proper validation, error handling, JWT token generation/verification, and case-insensitive email matching. Backend is production-ready. Main agent can now summarize and finish the task."

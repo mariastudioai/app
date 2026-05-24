@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { plans } from '../data/mock';
 import { Check } from 'lucide-react';
+import { useAuthDialog } from '../context/AuthDialogContext';
 
 const Pricing = () => {
   const [billing, setBilling] = useState('monthly');
   const current = plans[billing];
+  const { openSignup } = useAuthDialog();
 
   return (
     <section id="pricing" className="py-24 px-4 section-bg">
@@ -66,8 +68,8 @@ const Pricing = () => {
                   </div>
                 ))}
               </div>
-              <a
-                href="#signup"
+              <button
+                onClick={() => openSignup(p.name)}
                 className={`btn-pill w-full justify-center py-3 text-[13px] tracking-[0.08em] uppercase ${
                   p.popular
                     ? 'bg-[#3E2F2B] text-white hover:bg-[#2A1F1B] shadow-[0_10px_25px_-10px_rgba(62,47,43,0.45)]'
@@ -75,7 +77,7 @@ const Pricing = () => {
                 }`}
               >
                 {p.cta}
-              </a>
+              </button>
             </div>
           ))}
         </div>

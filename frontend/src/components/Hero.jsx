@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Sparkles, FileArchive, Github, CheckCircle2, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
+import { useAuthDialog } from '../context/AuthDialogContext';
+import { heroSideImage } from '../data/imagery';
 
 const DeployingCard = () => {
   const [step, setStep] = useState(0);
@@ -156,6 +158,7 @@ const HeroDeployCard = () => {
 };
 
 const Hero = () => {
+  const { openSignup } = useAuthDialog();
   return (
     <section className="hero-bg pt-32 pb-20 px-4">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -171,12 +174,12 @@ const Hero = () => {
             Drop a ZIP or connect GitHub. Your site is live in seconds, with SSL, analytics, SEO optimization and forms included.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a
-              href="#signup"
+            <button
+              onClick={() => openSignup()}
               className="btn-pill px-6 py-3.5 text-[14px] tracking-[0.04em] uppercase text-white bg-[#3E2F2B] hover:bg-[#2A1F1B] shadow-[0_12px_30px_-10px_rgba(62,47,43,0.45)]"
             >
               Get started free
-            </a>
+            </button>
             <a
               href="#how-it-works"
               className="btn-pill px-6 py-3.5 text-[14px] tracking-[0.04em] uppercase text-[#3E2F2B] bg-transparent border border-[#3E2F2B]/30 hover:border-[#C6A77D] hover:text-[#C6A77D]"
@@ -188,8 +191,20 @@ const Hero = () => {
             Join developers already hosting on <a href="#" className="gold-link font-semibold">MARI.A Launch</a> · Free to start
           </p>
         </div>
-        <div className="reveal flex justify-center lg:justify-end" style={{ animationDelay: '0.15s' }}>
-          <HeroDeployCard />
+        <div className="reveal flex justify-center lg:justify-end relative" style={{ animationDelay: '0.15s' }}>
+          {/* Editorial side accent image */}
+          <div className="hidden lg:block absolute -top-6 -right-8 w-[240px] h-[300px] rounded-3xl overflow-hidden border border-[#C6A77D]/30 shadow-[0_30px_60px_-30px_rgba(62,47,43,0.35)] rotate-[3deg] z-0">
+            <img
+              src={heroSideImage.src}
+              alt={heroSideImage.alt}
+              loading="eager"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#3E2F2B]/15 via-transparent to-[#C6A77D]/15" />
+          </div>
+          <div className="relative z-10">
+            <HeroDeployCard />
+          </div>
         </div>
       </div>
     </section>

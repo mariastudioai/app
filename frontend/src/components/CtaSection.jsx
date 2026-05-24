@@ -1,6 +1,8 @@
 import React from 'react';
+import { useAuthDialog } from '../context/AuthDialogContext';
 
 const CtaSection = () => {
+  const { openSignup } = useAuthDialog();
   return (
     <section id="signup" className="cta-bg py-28 px-4 relative overflow-hidden">
       <div className="max-w-3xl mx-auto text-center relative">
@@ -13,12 +15,12 @@ const CtaSection = () => {
         <p className="mt-5 text-[17px] text-[#3E2F2B]/75 font-light">
           Free to start. No credit card required.
         </p>
-        <a
-          href="#"
+        <button
+          onClick={() => openSignup()}
           className="btn-pill mt-8 inline-flex px-8 py-4 text-[13px] tracking-[0.18em] uppercase bg-[#3E2F2B] text-white hover:bg-[#2A1F1B] shadow-[0_15px_40px_-15px_rgba(62,47,43,0.55)]"
         >
           Get started free
-        </a>
+        </button>
       </div>
     </section>
   );
